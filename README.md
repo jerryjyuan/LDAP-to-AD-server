@@ -1,8 +1,8 @@
 # LDAP_to_AD_server
 Implementing LDAP to do authentication with AD server by using php.
 
-》Summary
-  This code implement the process of LDAP to do connection, authentication, data search from an AD server.
+》Summary<br/>
+&nbsp;&nbsp;&nbsp; This code implement the process of LDAP to do connection, authentication, data search from an AD server.
 
 》Prerequisite
   Before doing this, you need to know some information list below:
