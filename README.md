@@ -11,9 +11,9 @@ Implementing LDAP to do authentication with AD server by using php.
 
 》Content
   The process can be summarized by the order:
-  ● step1: ldap_connect()<br/>
+  ● step1: ldap_connect()
            Creating the connection session to an AD server.
-  ● step2: ldap_bind()<br/>
+  ● step2: ldap_bind()
            Getting the authentication to access an AD server. 
            In other words, If you bind successfully, then you are authenticated to login into the AD server.
            After you login, you can search, update or display your search result(relies on your need).
