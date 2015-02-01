@@ -4,7 +4,7 @@
 <br/>
 #####Prerequisite
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before doing this, you need to know some information list below:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● AD Server's IP Address<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● AD Server's IP address<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● Structure of directory information tree(DIT) stored in the AD server<br/>
 <br/>
 #####Content
