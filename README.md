@@ -1,6 +1,6 @@
 #### LDAP_to_AD_server<br/>
 #####Summary
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This code implement the process of LDAP to do connection, authentication, data search from an AD server by using php.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The program implement the process of LDAP to do connection, authentication, data search from an AD server by using php.
 <br/>
 #####Prerequisite
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before doing this, you need to know some information list below:<br/>
