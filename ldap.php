@@ -13,7 +13,7 @@ if(isset($_POST['account']) && isset($_POST['password']) && !empty($_POST['accou
 	*/ 
 	$ad_server = '';  	//Type the domain name or ip address of AD server.
 	$port = '389';  	//Default port to connection an AD server.
-	$ad_tree = "";  //Type the connected AD server's directory structure. ex:CN=$account,OU=OUName2,OU=OUName1,DC=AU,DC=COM,DC=TW
+	$authentication_tree = "";  //Type a tree path which will be regarded as a path to do authentication. ex:CN=$account,OU=OUName2,OU=OUName1,DC=AU,DC=COM,DC=TW
 	$search_base_tree = "";  //Type a tree path which will be regarded as a start point to do search. ex:OU=OUName2,OU=OUName1,DC=AU,DC=COM,DC=TW
 	/**
 	Connect to AD server. 
@@ -27,7 +27,7 @@ if(isset($_POST['account']) && isset($_POST['password']) && !empty($_POST['accou
 		/**
 		Using function ldap_bind() to get the authentication of access right.
 		*/
-		$ldapbind = ldap_bind($ldap_conn, $ad_tree, $password) or die ("Error trying to bind: ".ldap_error($ldap_conn));
+		$ldapbind = ldap_bind($ldap_conn, $authentication_tree, $password) or die ("Error trying to bind: ".ldap_error($ldap_conn));
 		if ($ldapbind) 
 		{
 			//Login successful(LDAP bind successful)	
