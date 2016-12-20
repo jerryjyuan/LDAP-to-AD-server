@@ -14,6 +14,7 @@ if(isset($_POST['account']) && isset($_POST['password']) && !empty($_POST['accou
 	$ad_server = '';  	//Type the domain name or ip address of AD server.
 	$port = '389';  	//Default port to connection an AD server.
 	$ad_tree = "";  //Type the connected AD server's directory structure. ex:CN=$account,OU=OUName2,OU=OUName1,DC=AU,DC=COM,DC=TW
+	$search_base_tree = "";  //Type a tree path which will be regarded as a start point to do search. ex:OU=OUName2,OU=OUName1,DC=AU,DC=COM,DC=TW
 	/**
 	Connect to AD server. 
 	*/
@@ -35,7 +36,8 @@ if(isset($_POST['account']) && isset($_POST['password']) && !empty($_POST['accou
 			
 			//Then you can search, update or display the result. 
 			//Here we fetch the user's basic info and display the result 
-			$result = ldap_search($ldap_conn, $ad_tree, "(cn=$account)");
+			$attributes = array("name", "sn", "mail");  //Speficy the needed attributes. 
+			$result = ldap_search($ldap_conn, $search_base_tree, "(cn=$account)", $attributes);  //The fourth parameter is Optional. But if you have clearly known which attributes you are needed, Specify it will make the search more faster. Change the third parameter to the filter condition you are actually needed. Here gives you an example: if you want to search all persons under the $search_base_tree, the filter condition should be replaced by the string "(&(objectCategory=person)(cn=*))",
 			$data = ldap_get_entries($ldap_conn, $result);			
 			//Get the attribute value you want. Here is the example to fetch the username and email address
 			//Note:The attribute name must be lower-case type, so if an attribute named Mail, you need to use it's lower-case name(mail) in the program.
